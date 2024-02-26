@@ -76,9 +76,7 @@ function renderCards(dataArray){
 
 async function handleSearch(){
     if (searchEl.value !== '') {
-        const response = await fetch(`https://www.omdbapi.com/?apikey=4d93911c&s=${searchEl.value}`, {
-            referrerPolicy: "unsafe_url" 
-        })
+        const response = await fetch(`https://www.omdbapi.com/?apikey=4d93911c&s=${searchEl.value}`)
         const data = await response.json()
 
         console.log(data);
@@ -87,9 +85,7 @@ async function handleSearch(){
         if (data['Search'] !== 'undefined' && data.Response !== 'False'){
             const completeData = await Promise.all(
                 data['Search'].map( async data => {
-                    const response = await fetch(`https://www.omdbapi.com/?apikey=4d93911c&i=${data.imdbID}`, {
-                        referrerPolicy: "unsafe_url" 
-                    })
+                    const response = await fetch(`https://www.omdbapi.com/?apikey=4d93911c&i=${data.imdbID}`)
                     const json = await response.json()
                     return json
             }))
