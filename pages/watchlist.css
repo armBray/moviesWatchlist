@@ -1,0 +1,21 @@
+.hero-base {
+    row-gap: 5px;
+}
+
+#add-items-watchlist{
+    display: flex;
+    column-gap: 4px;
+}
+
+#add-items-watchlist svg path{
+    fill: var(--dark-card-title);
+}
+
+.light{
+    #add-items-watchlist svg path{
+        fill: var(--light-card-info);
+    }
+    #add-items-watchlist span{
+        color: var(--light-card-info);
+    }
+}
