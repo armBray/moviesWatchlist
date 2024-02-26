@@ -4,7 +4,7 @@ const mainEl = document.getElementById('hero')
 const mainBaseEl = document.getElementById('hero-base')
 const switchEl = document.getElementById('switch-color')
 
-let localWatchlist = JSON.parse(localStorage.getItem('watchlist'));
+let localWatchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
 function handleSwitch(event) {
     // var element = document.body;
@@ -29,7 +29,6 @@ function renderCards(dataArray){
         const itemId = element.imdbID
         const isTheId = (element) => element === itemId;
         const indexToRender = localWatchlist.findIndex(isTheId)
-        //console.log(indexToRender);
         let htmlSvg = ''
 
         if (indexToRender !== -1 && indexToRender !== null) {

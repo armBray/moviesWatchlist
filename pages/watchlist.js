@@ -1,6 +1,6 @@
 const mainEl = document.getElementById('hero')
 
-let localWatchlist = JSON.parse(localStorage.getItem('watchlist'));
+let localWatchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
 async function fetchData(){
     const completeData = await Promise.all(
